@@ -1,28 +1,24 @@
 import "boxicons/css/boxicons.min.css";
 
 const Header = () => {
-    //simple function to toggle the mobile menu
-    const toggleMobileMenu=()=>{
-        //get the mobile menu element
-        const mobileMenu = document.getElementById("mobileMenu");
-        //if this has the ""hidden class ,remove it otherwise add it
-        if(mobileMenu.classList.contains('hidden')){
-            mobileMenu.classList.remove('hidden');
-
-        }else{
-            mobileMenu.classList.add('hidden')
-        }
+  //simple function to toggle the mobile menu
+  const toggleMobileMenu = () => {
+    //get the mobile menu element
+    const mobileMenu = document.getElementById("mobileMenu");
+    //if this has the ""hidden class ,remove it otherwise add it
+    if (mobileMenu.classList.contains("hidden")) {
+      mobileMenu.classList.remove("hidden");
+    } else {
+      mobileMenu.classList.add("hidden");
     }
+  };
   return (
     <>
       <header className="py-1 px-7 flex justify-between items-center sticky top-0 z-50 w-full border-b-[0.3px] border-[#babaff] bg-black ">
         {/* left section */}
         <div className="flex lg:gap-14 gap-4 items-center">
-          <img
-            className="md:w-16 w-12"
-            src="public\images\logo.png"
-            alt="Logo-img"
-          />
+          <img className="md:w-16 w-12" src="/images/logo.png" alt="Logo-img" />
+
           <div className="hidden md:flex gap-5 items-center">
             <button className="h-8 px-6 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-lg font-medium text-nowrap hover:opacity-70 transition-all duration-300">
               PLAY NOW
@@ -64,7 +60,10 @@ const Header = () => {
           <i class="bx bx-menu"></i>
         </button>
         {/* mobile menu hidden by default */}
-        <div id="mobileMenu" className=" hidden fixed top-14 right-0 left-0 bg-black p-5 md:hidden">
+        <div
+          id="mobileMenu"
+          className=" hidden fixed top-14 right-0 left-0 bg-black p-5 md:hidden"
+        >
           <nav className="flex flex-col gap-4 items-center">
             <a
               href="#"
@@ -92,12 +91,8 @@ const Header = () => {
             </a>
           </nav>
           <div className="flex flex-col gap-3 w-full mt-4">
-            <button className="bg-purple-700 py-2 rouned">
-                Play Now
-            </button>
-            <button className="bg-gray-500 py-2 rouned">
-                NFT Store
-            </button>
+            <button className="bg-purple-700 py-2 rouned">Play Now</button>
+            <button className="bg-gray-500 py-2 rouned">NFT Store</button>
           </div>
         </div>
       </header>
