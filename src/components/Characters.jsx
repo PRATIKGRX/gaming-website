@@ -35,7 +35,7 @@ function CustomeCursor({ isHovering3D }) {
       }}
     >
       <motion.div
-        className={`rounded-full ${
+        className={`rounded-full hidden md:block ${
           isHovering3D ? "bg-violet-500" : "bg-white"
         }`}
         animate={{
