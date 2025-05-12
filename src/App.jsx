@@ -1,6 +1,6 @@
-import Header from "./componenets/header";
-import Hero from "./componenets/Hero";
-import Characters from "./componenets/Characters";
+import Hero from "./components/Hero"
+import Characters from "./components/Characters"
+import Header from "./components/Header"
 const App = () => {
   return (
     <div className=''>
