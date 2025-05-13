@@ -222,35 +222,42 @@ const Characters = () => {
             </div>
           </div>
         </div>
-        {/* right side contiona; 3d model */}
-        <div className="relative md:w-2/4 w-full md:h-full h-80 flex items-center justify-center overflow-hidden "
-        onMouseEnter={handel3DAreaMouseEnter} onMouseLeave={handel3DAreaMouseLeave}>
-          <AnimatePresence mode="wait">
-            {selectedAvatar === "VIKI" ? (
-              <motion.div
-                key="VIKI"
-                className="absolute inset-0"
-                initial={{ x: "100%" }}
-                animate={{ x: 0 }}
-                exit={{ x: "-100%" }}
-                transition={{ duration: 0.5 }}
-              >
-                <Spline scene="https://prod.spline.design/A1c2FTaOTMr0gjBr/scene.splinecode" />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="EVA"
-                className="absolute inset-0"
-                initial={{ x: "100%" }}
-                animate={{ x: 0 }}
-                exit={{ x: "-100%" }}
-                transition={{ duration: 0.5 }}
-              >
-                <Spline scene="https://prod.spline.design/ZA9AzztallNT-TSu/scene.splinecode" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+        {/* right-side container */}
+<div
+  className="relative md:w-2/4 w-full md:h-full h-80 flex items-center justify-center overflow-hidden"
+  onMouseEnter={handel3DAreaMouseEnter}
+  onMouseLeave={handel3DAreaMouseLeave}
+>
+  {/* VIKI */}
+  <motion.div
+    key="VIKI"
+    className="absolute inset-0 transition-all duration-500"
+    animate={{
+      x: selectedAvatar === "VIKI" ? 0 : "-100%",
+      opacity: selectedAvatar === "VIKI" ? 1 : 0,
+      zIndex: selectedAvatar === "VIKI" ? 10 : 0,
+    }}
+    transition={{ duration: 0.5 }}
+  >
+    <Spline scene="https://prod.spline.design/A1c2FTaOTMr0gjBr/scene.splinecode" />
+  </motion.div>
+
+  {/* EVA */}
+  <motion.div
+    key="EVA"
+    className="absolute inset-0 transition-all duration-500"
+    animate={{
+      x: selectedAvatar === "EVA" ? 0 : "100%",
+      opacity: selectedAvatar === "EVA" ? 1 : 0,
+      zIndex: selectedAvatar === "EVA" ? 10 : 0,
+    }}
+    transition={{ duration: 0.5 }}
+  >
+    <Spline scene="https://prod.spline.design/ZA9AzztallNT-TSu/scene.splinecode" />
+  </motion.div>
+</div>
+
+
       </div>
     </div>
   );
